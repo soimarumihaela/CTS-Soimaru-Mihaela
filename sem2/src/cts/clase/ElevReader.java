@@ -10,27 +10,27 @@ public class ElevReader extends Reader {
 
 	@Override
 	public List<Aplicant> readAplicanti(String file) {
-		Scanner input2 = null;
+		Scanner scanner = null;
 		try {
-			input2 = new Scanner(new File(file));
+			scanner = new Scanner(new File(file));
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		input2.useDelimiter(",|\n");
+		scanner.useDelimiter(",|\n");
 		List<Aplicant> elevi = new ArrayList<Aplicant>();
 
-		while (input2.hasNext()) {
+		while (scanner.hasNext()) {
 			Elev elev=new Elev();
-			readDateAplicant(input2, elev);
-			int clasa = input2.nextInt();
-			String tutore = input2.next();
+			readDateAplicant(scanner, elev);
+			int clasa = scanner.nextInt();
+			String tutore = scanner.next();
 			elev.setClasa(clasa);
 			elev.setTutore(tutore);
 			elevi.add(elev);
 		}
 
-		input2.close();
+		scanner.close();
 		return elevi;
 	}
 

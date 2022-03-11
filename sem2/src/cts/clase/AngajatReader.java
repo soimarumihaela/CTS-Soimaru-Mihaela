@@ -11,26 +11,25 @@ public class AngajatReader extends Reader {
 
 	@Override
 	public List<Aplicant> readAplicanti(String file) {
-		Scanner input2 = null;
+		Scanner scanner = null;
 		try {
-			input2 = new Scanner(new File(file));
+			scanner = new Scanner(new File(file));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		input2.useDelimiter(",");
-		List<Aplicant> angajati = new ArrayList<Aplicant>();
+		scanner.useDelimiter(",");
+		List<Aplicant> angajati = new ArrayList<>();
 
-		while (input2.hasNext()) {
+		while (scanner.hasNext()) {
 			Angajat angajat=new Angajat();
-			readDateAplicant(input2, angajat);
-			int salariu = input2.nextInt();
-			String ocupatie = input2.next();
+			readDateAplicant(scanner, angajat);
+			int salariu = scanner.nextInt();
+			String ocupatie = scanner.next();
 			angajat.setSalariu(salariu);
 			angajat.setOcupatie(ocupatie);
 			angajati.add(angajat);
 		}
-		input2.close();
+		scanner.close();
 		return angajati;
 	}
 	
