@@ -3,11 +3,7 @@ package prototype;
 public class Tramvai implements MijlocTransport {
 
 	String SoferTramvai;
-	@Override
-	public MijlocTransport copiaza() throws CloneNotSupportedException {
-		
-		return (MijlocTransport) super.clone();
-	}
+
 	public Tramvai(String soferTramvai) {
 		super();
 		SoferTramvai = soferTramvai;
@@ -17,6 +13,11 @@ public class Tramvai implements MijlocTransport {
 	}
 	public void setSoferTramvai(String soferTramvai) {
 		SoferTramvai = soferTramvai;
+	}
+	@Override
+	public MijlocTransport copiaza() throws CloneNotSupportedException {
+		return (MijlocTransport) super.clone();
+		
 	}
 
 	

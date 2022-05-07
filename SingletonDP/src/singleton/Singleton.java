@@ -16,7 +16,7 @@ public class Singleton {
 	//lazy init singleton
 	
 	private static Singleton instanta = null;
-	public synchronized static Singleton getInstanta() {
+	public static Singleton getInstanta() {
 		if(instanta == null) {
 			instanta=new Singleton();
 		}
