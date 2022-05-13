@@ -1,7 +1,7 @@
 package flyweight;
 
 public class Linie implements Flyweight {
-	int nrLinie;
+	   int nrLinie;
 		String primaStatie;
 		String ultimaStatie;
 		

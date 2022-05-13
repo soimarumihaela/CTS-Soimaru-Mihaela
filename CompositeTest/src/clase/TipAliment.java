@@ -20,7 +20,7 @@ public class TipAliment implements Item{
 	@Override
 	public void adaugaItem(Item item) {
 		items.add(item);
-		
+			
 	}
 
 	@Override

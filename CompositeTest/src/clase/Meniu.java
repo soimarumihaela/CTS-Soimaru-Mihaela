@@ -18,6 +18,7 @@ public class Meniu implements Item{
 
 	@Override
 	public void adaugaItem(Item item) {
+		
 		items.add(item);
 		
 	}
